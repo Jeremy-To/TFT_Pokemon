@@ -52,20 +52,31 @@ function FightActions() {
     }
   };
   return (
-    <div>
-      <div>
-        <p>Enemy Pokemon:</p>
-        <h3>{enemyPokemon ? <div><img src={enemyPokemon.sprites.front_default} alt="image of my pokemon"></img><p>{enemyPokemon.name}</p></div>: 'Loading...'}</h3>
+    <section className='w-1/4 bg-red-200 flex flex-col'>
+      <div className='flex flex-col items-end mx-10'>
+          <p>Enemy Pokemon:</p>
+          <h3>{enemyPokemon ? <div><img src={enemyPokemon.sprites.front_default} alt="image of my pokemon"></img><p className='font-bold'>{enemyPokemon.name}</p></div>: 'Loading...'}</h3>
+          <p>{`Health: ${enemyHealth}/${enemyPokemon ? enemyPokemon.stats.reduce((acc, stat) => acc + stat.base_stat, 0) : ''}`}</p>
+      </div>
+      <div className='flex flex-col items-start mx-10'>
         <p>My Pokemon:</p>
-        <h3>{myPokemon ? <div><img src={myPokemon.sprites.front_default} alt="image of my pokemon"></img><p>{myPokemon.name}</p></div>: 'Loading...'}</h3>
-        <p>{`Health: ${enemyHealth}/${enemyPokemon ? enemyPokemon.stats.reduce((acc, stat) => acc + stat.base_stat, 0) : ''}`}</p>
-        <button onClick={handleAttack}>Attack</button>
+        <h3>{myPokemon ? <div><img src={myPokemon.sprites.back_default} alt="image of my pokemon"></img><p className='font-bold'>{myPokemon.name}</p></div>: 'Loading...'}</h3>
+
+      </div>
+      <div className='m-4 w-1/5 p-2 rounded-md bg-red-50 flex justify-center hover:bg-red-900 hover:text-white'>
+        <button onClick={handleAttack} >Attack</button>
       </div>
       <Modal isOpen={modalIsOpen}>
-        <p>Enemy Pokemon fainted! Thanks for playing! Want to play again?</p>
-        <Link to="/">Yes</Link>
+        <div className='bg-green-300 flex flex-col justify-center items-center h-full'>
+        <h2 className='text-6xl font-bold m-4'>Victory!</h2>
+        <p className='text-lg italic'>Enemy Pokemon fainted! Thanks for playing!</p>
+        <p className='mb-6'> Want to play again?</p>
+        <button className='rounded-md border-2 bg-yellow-300 hover:bg-yellow-600 hover:text-white p-2'>        
+          <Link to="/">Yes</Link>
+        </button>
+        </div>
       </Modal>
-    </div>
+    </section>
   );
 }
 

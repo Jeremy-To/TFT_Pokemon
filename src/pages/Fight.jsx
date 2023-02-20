@@ -3,7 +3,7 @@ import FightActions from '../components/items/FightActions'
 
 function Fight() {
   return (
-    <section>
+    <section className='flex justify-center'>
       <FightActions />
     </section>
   )

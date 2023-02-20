@@ -21,7 +21,6 @@ function ChoicePkm() {
       } else if (difficultyLevel === 'hard') {
         maxTotalStats = Infinity;
         minTotalStats = 500;
-        numPokemons = 5;
       }
 
       const randomPokemons = [];
@@ -55,20 +54,21 @@ function ChoicePkm() {
   };
 
   return (
-    <div>
-      <h2>{`Difficulty: ${difficultyLevel}`}</h2>
-      <div>
-        <p>Select a Pokemon:</p>
+    <div className='flex' >
         {randomPokemons.map((pokemon) => (
-          <div key={pokemon.id}>
+          <div  key={pokemon.id} className='flex flex-col justify-center items-center bg-white m-2 rounded-lg' >
             <img src={pokemon.sprites.front_default} alt={`Sprite of ${pokemon.name}`} />
-            <p>Total Stats: {pokemon.totalStats}</p>
-            <Link to='/fight'> 
-              <button onClick={() => handleSelectPokemon(pokemon)}>Select</button>
-            </Link>
+            <div className='flex items-center justify-center flex-col p-4'>
+              <p className='mx-2 text-lg font-bold'>{pokemon.name}</p>
+              <p>Power Stats: {pokemon.totalStats}</p>
+            </div>
+            <div className='rounded-md p-2 bg-blue-500 text-white hover:bg-blue-800 my-2'>
+              <Link to='/fight'> 
+                <button onClick={() => handleSelectPokemon(pokemon)}>Select</button>
+              </Link>
+            </div>
           </div>
         ))}
-      </div>
     </div>
   );
 }

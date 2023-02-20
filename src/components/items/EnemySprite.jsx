@@ -53,15 +53,17 @@ function EnemySprite() {
   }
 
   return (
-    <div>
-      <h2>{`Difficulty: ${difficultyLevel}`}</h2>
-      <div>
-        <p>Random Pokemon:</p>
+    <section className='bg-red-200 flex flex-col justify-center items-center'>
+      <h2 className='bg-gray-400 m-2 rounded-lg p-2'>{`Difficulty: ${difficultyLevel}`}</h2>
+      <div className='m-2 bg-white p-4 rounded-lg flex flex-col justify-center items-center'>
+        <p>Enemy Pokemon:</p>
+        <p className='font-bold text-lg'>{randomPokemon.name}</p>
         <img src={randomPokemon.sprites.front_default} alt={`Sprite of ${randomPokemon.name}`} />
-        <p>Total Stats: {randomPokemon.totalStats}</p>
+        <p>Power Stats: {randomPokemon.totalStats}</p>
       </div>
+      <p className='bg-gray-400 p-2 rounded'>Select a Pokemon:</p>
       <ChoicePkm />
-    </div>
+    </section>
   );
 }
 

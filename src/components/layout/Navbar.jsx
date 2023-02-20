@@ -44,13 +44,13 @@ function Navbar() {
 						</div>
 						<ul className="flex flex-col items-center justify-between min-h-[250px]" onClick={navCloseHandler}>
 							<li className="border-b border-gray-400 my-8 uppercase hover:text-orange-500 active:text-orange-500">
-								<Link to="/details">details</Link>
+								<Link to="/">details</Link>
 							</li>
 							<li className="border-b border-gray-400 my-8 uppercase hover:text-orange-500 active:text-orange-500">
-								<Link to="/list">list</Link>
+								<Link to="/">list</Link>
 							</li>
               <li className="border-b border-gray-400 my-8 uppercase hover:text-orange-500 active:text-orange-500">
-								<Link to="/sprite">sprite </Link>
+								<Link to="/">sprite </Link>
 							</li>
 						</ul>
 					</div>
@@ -58,14 +58,14 @@ function Navbar() {
 
 				<ul className="hidden space-x-8 lg:flex lg:items-center text-xl mr-4">
 					<li className="ml-10 text-white hover:text-orange-500 active:bg-orange-200 active:rounded-md ">
-						<Link to="/details">details</Link>
+						<Link to="/">details</Link>
 					</li>
 					<li className="ml-10 text-white  hover:text-orange-500 active:bg-orange-200 active:rounded-md ">
-						<Link to="/list">list</Link>
+						<Link to="/">list</Link>
 					</li>
 
 					<li className="ml-10 text-white  hover:text-orange-500 active:bg-orange-200 active:rounded-md ">
-						<Link to="/sprite">sprite</Link>
+						<Link to="/">sprite</Link>
 					</li>
 				</ul>
 			</nav>

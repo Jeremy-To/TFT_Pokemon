@@ -3,19 +3,27 @@ import { createSlice } from '@reduxjs/toolkit';
 const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState: {
-    initialPokemonId: null,
-    selectedPokemonId: null, 
+    difficultyLevel: null,
+    myPkmId: null,
+    enemyPkmId: null,
   },
   reducers: {
-    setIdOrName: (state, action) => {
-      state.idOrName = action.payload;
+    setDifficultyLevel: (state, action) => {
+      state.difficultyLevel = action.payload;
     },
-    setSelectedPokemonId: (state, action) => {
-      state.selectedPokemonId = action.payload;
+    setMyPkmId: (state, action) => {
+      state.myPkmId = action.payload;
+    },
+    setEnemyPkmId: (state, action) => {
+      state.enemyPkmId = action.payload;
     },
   },
 });
 
-export const { setIdOrName, setSelectedPokemonId } = pokemonSlice.actions;
+export const {
+  setDifficultyLevel,
+  setMyPkmId,
+  setEnemyPkmId,
+} = pokemonSlice.actions;
 
 export default pokemonSlice.reducer;

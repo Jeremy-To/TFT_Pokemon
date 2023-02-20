@@ -1,18 +1,22 @@
 import { Routes, Route } from 'react-router-dom';
-
-import PokemonDetails from './components/PokemonDetails';
-import PokemonList from './components/PokemonList';
-import PokemonSprite from './components/Sprite';
+import Lobby from './pages/Lobby';
+import Home from './pages/Home';
+import Layout from './components/layout/Layout';
+import Game from './pages/Game';
+import Fight from './pages/Fight';
 
 function App() {
 
   return (
+		<Layout>
 			<Routes>
-				<Route path="/detail" exact element={<PokemonDetails />} />
-				<Route path="/list" exact element={<PokemonList />} />
-				<Route path="/sprite" exact element={<PokemonSprite />} />
+				<Route path="/" exact element={<Home />} />
+				<Route path="/lobby" exact element={<Lobby />} />
+				<Route path="/game" exact element={<Game />} />
+				<Route path="/fight" exact element={<Fight />} />
 			</Routes>
+		</Layout>
   )
 }
 
-export default App
+export default App;
